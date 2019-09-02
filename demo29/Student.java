@@ -8,6 +8,7 @@ public class Student {
     private int id;
     private String name;
     private int score; //成绩
+
     //构造方法
     public Student() {
     }
@@ -17,6 +18,7 @@ public class Student {
         this.name = name;
         this.score = score;
     }
+
     //成员方法
     public int getId() {
         return id;
@@ -41,8 +43,8 @@ public class Student {
     public void setScore(int score) {
         this.score = score;
     }
-    //toString（），用来将对象转换成对应的字符串形式
 
+    //toString（），用来将对象转换成对应的字符串形式
     @Override
     public String toString() {
         return "Student{" +
@@ -69,8 +71,15 @@ public class Student {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        //this:s1 o:s2
+        //比较两啊个对象的地址值是否相同，提高效率
+        //补充：如果if语句控制的语句体只有一行代码，大括号可以不写
+        if (this == o)
+            return true;
+        //判断要比较的两个对象是否为同一个类型的对象，提高程序的健壮性
+        if (o == null || getClass() != o.getClass())
+            return false;
+        //向下转型，正常的逻辑代码
         Student student = (Student) o;
         return id == student.id &&
                 score == student.score &&
@@ -81,5 +90,4 @@ public class Student {
     public int hashCode() {
         return Objects.hash(id, name, score);
     }
-}
 }
