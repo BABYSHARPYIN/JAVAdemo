@@ -75,17 +75,17 @@ public class SendPokerTest {
             //获取编号
             Integer pokerNum = list.get(i);
             //System.out.println(pokerNum);
-            if(i>=list.size()-3){
+            if (i >= list.size() - 3) {
                 //底牌
                 d.add(pokerNum);
-            }else if (i%3 == 0){
+            } else if (i % 3 == 0) {
                 a.add(pokerNum);
-            }else if (i%3 == 1){
+            } else if (i % 3 == 1) {
                 b.add(pokerNum);
-            }else if (i%3 == 2){
+            } else if (i % 3 == 2) {
                 c.add(pokerNum);
             }
-            
+
         }
         //3.3 查看玩家，底牌的编号
 //        System.out.println("a:" + a);
@@ -96,18 +96,19 @@ public class SendPokerTest {
         System.out.println("--------------------");
 //        String str = printPoker(a,pokers);
 //        System.out.println("a:" + str);
-        System.out.println("a:" + printPoker(a,pokers));
-        System.out.println("b:" + printPoker(b,pokers));
-        System.out.println("c:" + printPoker(c,pokers));
-        System.out.println("底牌:" + printPoker(d,pokers));
+        System.out.println("a:" + printPoker(a, pokers));
+        System.out.println("b:" + printPoker(b, pokers));
+        System.out.println("c:" + printPoker(c, pokers));
+        System.out.println("底牌:" + printPoker(d, pokers));
     }
+
     /*
         4、定义一个方法，用来看牌
             方法名：printPoker
             参数列表：List<Integer>,Map<Integer,String>
             返回值：String
      */
-    public static String printPoker(List<Integer> nums,Map<Integer,String> pokers){
+    public static String printPoker(List<Integer> nums, Map<Integer, String> pokers) {
         //1、对牌的编号进行升序排列
         Collections.sort(nums);
         //2、遍历拍的编号集合，获取到每一个编号
@@ -117,12 +118,10 @@ public class SendPokerTest {
             //3、根据编号去双列集合中查找该编号对应的具体牌
             String poker = pokers.get(num);
             //4、将获取到的牌进行拼接
-            sb.append(poker+" ");
+            sb.append(poker + " ");
         }
         //5、将最后拼接结果返回即可
         String str = sb.toString();
         return str.trim();
-
-
     }
 }
