@@ -13,7 +13,7 @@ import java.io.Reader;
         FileReader类的构造方法：
             public FileReader(String pathname)     根据传入的字符串形式的路径，获取字符输入流对象
  */
-public class Test {
+public class ReaderDemo1 {
     public static void main(String[] args) throws IOException {
         //需求：通过字符流读取数据
         //1、创建字符输入流对象
